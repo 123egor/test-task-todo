@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список задач</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page">
+  <main class="todo">
+    <h1 class="todo__title">Список задач</h1>
+
+    <form class="todo__form todo-form" id="todo-form" autocomplete="off">
+      <input class="todo-form__input" id="todo-input" type="text"
+             placeholder="Что нужно сделать?" maxlength="200" aria-label="Новая задача">
+      <button class="todo-form__button" type="submit">Добавить</button>
+    </form>
+
+    <ul class="todo__list" id="todo-list"></ul>
+
+    <p class="todo__empty" id="todo-empty">Задач пока нет — добавьте первую!</p>
+
+    <footer class="todo__footer" id="todo-footer">
+      <span class="todo__counter" id="todo-counter"></span>
+      <button class="todo__clear" id="todo-clear" type="button">Удалить выполненные</button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

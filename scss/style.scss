@@ -1,0 +1,6 @@
+// Точка входа: собирается в css/style.css командой `npm run build`
+@use "base";
+@use "blocks/page";
+@use "blocks/todo";
+@use "blocks/todo-form";
+@use "blocks/todo-item";

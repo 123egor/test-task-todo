@@ -1,0 +1,14 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "Простой список задач (HTML + SCSS + JS)",
+  "scripts": {
+    "build": "sass scss/style.scss css/style.css --no-source-map --style=expanded",
+    "watch": "sass scss/style.scss css/style.css --no-source-map --watch"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.108.1"
+  },
+  "private": true
+}

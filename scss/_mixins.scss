@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "variables" as *;
+
+// Выводит все цвета темы как CSS-переменные: --bg, --text, ...
+@mixin theme-vars($name) {
+  @each $key, $value in map.get($themes, $name) {
+    --#{$key}: #{$value};
+  }
+}
+
+// Сброс стандартных стилей кнопки
+@mixin button-reset {
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@mixin mobile {
+  @media (max-width: $breakpoint-sm) {
+    @content;
+  }
+}

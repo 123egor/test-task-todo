@@ -1,0 +1,46 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// Блок: форма добавления задачи
+.todo-form {
+  display: flex;
+  gap: 8px;
+
+  &__input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 14px;
+    font: inherit;
+    font-size: 16px;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: $radius;
+    outline: none;
+    transition: border-color $transition;
+
+    &::placeholder {
+      color: var(--muted);
+    }
+
+    &:focus {
+      border-color: var(--accent);
+    }
+  }
+
+  &__button {
+    @include button-reset;
+    padding: 0 18px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    border-radius: $radius;
+    transition: background $transition;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--accent-hover);
+    }
+  }
+}

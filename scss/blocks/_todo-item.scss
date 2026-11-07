@@ -1,0 +1,62 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// Блок: одна задача в списке
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--border);
+
+  &__checkbox {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    accent-color: var(--accent);
+    cursor: pointer;
+  }
+
+  &__text {
+    flex: 1;
+    word-break: break-word;
+    cursor: pointer;
+    transition: color $transition;
+  }
+
+  &__delete {
+    @include button-reset;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--muted);
+    border-radius: $radius-sm;
+    opacity: 0.6;
+    transition: opacity $transition, color $transition, background $transition;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 1;
+      color: var(--danger);
+      background: var(--danger-bg);
+    }
+
+    // На сенсорных экранах наведения нет — показываем кнопку целиком
+    @media (hover: none) {
+      opacity: 1;
+    }
+  }
+
+  &:hover &__delete {
+    opacity: 1;
+  }
+
+  // Модификатор: задача выполнена
+  &--done &__text {
+    color: var(--muted);
+    text-decoration: line-through;
+  }
+}

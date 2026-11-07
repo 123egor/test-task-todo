@@ -1,0 +1,21 @@
+@use "mixins" as *;
+
+:root {
+  @include theme-vars(light);
+  // Подсказывает браузеру красить чекбоксы, полосы прокрутки и т.п. под тему
+  color-scheme: light dark;
+
+  @media (prefers-color-scheme: dark) {
+    @include theme-vars(dark);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}

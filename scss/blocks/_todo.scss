@@ -1,0 +1,58 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// Блок: карточка со списком задач
+.todo {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 28px;
+  background: var(--card);
+  border-radius: $radius-lg;
+  box-shadow: 0 10px 30px var(--shadow);
+
+  @include mobile {
+    padding: 20px 16px;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  &__form {
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__empty {
+    margin: 24px 0 8px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  &__clear {
+    @include button-reset;
+    transition: color $transition;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--danger);
+    }
+  }
+}
